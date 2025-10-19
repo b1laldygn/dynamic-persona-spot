@@ -1,6 +1,8 @@
 import { useLanguage } from "@/contexts/LanguageContext";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Shield, Zap } from "lucide-react";
+import cyberBg from "@/assets/cyber-security-bg.jpg";
+import energyBg from "@/assets/renewable-energy-bg.jpg";
 
 export const Hero = () => {
   const { t } = useLanguage();
@@ -11,6 +13,30 @@ export const Hero = () => {
 
   return (
     <section className="min-h-screen flex items-center justify-center relative overflow-hidden">
+      {/* Background images */}
+      <div className="absolute inset-0">
+        <div 
+          className="absolute left-0 top-0 w-1/2 h-full opacity-30 dark:opacity-20"
+          style={{
+            backgroundImage: `url(${cyberBg})`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            maskImage: 'linear-gradient(to right, rgba(0,0,0,0.8), rgba(0,0,0,0))',
+            WebkitMaskImage: 'linear-gradient(to right, rgba(0,0,0,0.8), rgba(0,0,0,0))'
+          }}
+        />
+        <div 
+          className="absolute right-0 top-0 w-1/2 h-full opacity-30 dark:opacity-20"
+          style={{
+            backgroundImage: `url(${energyBg})`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            maskImage: 'linear-gradient(to left, rgba(0,0,0,0.8), rgba(0,0,0,0))',
+            WebkitMaskImage: 'linear-gradient(to left, rgba(0,0,0,0.8), rgba(0,0,0,0))'
+          }}
+        />
+      </div>
+      
       <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-background to-accent/10" />
       
       {/* Animated background elements */}
